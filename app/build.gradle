@@ -1,0 +1,38 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion '25.0.0'
+    defaultConfig {
+
+        applicationId "com.example.raynwang.myapplication"
+        minSdkVersion 16
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0"
+    }
+
+    signingConfigs {
+        xenderBox {
+            storeFile file('youqicai')
+            storePassword 'www.youqicai.com'
+            keyAlias "www.youqicai.com"
+            keyPassword 'www.youqicai.com'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            signingConfig signingConfigs.xenderBox
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:appcompat-v7:19.+'
+
+    compile 'com.payumoney.sdkui:plug-n-play:1.2.0'
+}
