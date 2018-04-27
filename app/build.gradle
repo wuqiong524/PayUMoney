@@ -12,22 +12,6 @@ android {
         versionName "1.0"
     }
 
-    signingConfigs {
-        xenderBox {
-            storeFile file('youqicai')
-            storePassword 'www.youqicai.com'
-            keyAlias "www.youqicai.com"
-            keyPassword 'www.youqicai.com'
-        }
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            signingConfig signingConfigs.xenderBox
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
 }
 
 dependencies {
